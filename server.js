@@ -1,4 +1,5 @@
 var express = require('express')
+  , fs = require('fs')
   , logger = require('morgan')
   , app = express()
 
@@ -27,8 +28,15 @@ app.get('/art', function (req, res, next) {
   res.render('art')
 })
 
+app.get('/commissions/written_terms.pdf', function (req, res) {
+    var filePath = "/files/written_terms.pdf";
 
+    fs.readFile(__dirname + filePath , function (err,data){
+        res.contentType("application/pdf");
+        res.send(data);
+    });
+});
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log('Listening on http://localhost:' + (process.env.PORT || 3000))
+app.listen(process.env.PORT || 8080, function () {
+  console.log('Listening on http://localhost:' + (process.env.PORT || 8080))
 })
