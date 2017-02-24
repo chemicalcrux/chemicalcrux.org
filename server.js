@@ -28,6 +28,11 @@ app.get('/art', function (req, res, next) {
   res.render('art')
 })
 
+app.get('/commissions', function (req, res, next) {
+  res.render('commissions')
+})
+
+
 app.get('/commissions/written_terms.pdf', function (req, res) {
     var filePath = "/files/written_terms.pdf";
 
