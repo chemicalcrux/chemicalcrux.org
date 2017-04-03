@@ -42,6 +42,24 @@ app.get('/commissions/written_terms.pdf', function (req, res) {
     });
 });
 
+app.get('/commissions/audio_terms.pdf', function (req, res) {
+    var filePath = "/files/audio_terms.pdf";
+
+    fs.readFile(__dirname + filePath , function (err,data){
+        res.contentType("application/pdf");
+        res.send(data);
+    });
+});
+
+app.get('/commissions/rp_terms.pdf', function (req, res) {
+    var filePath = "/files/rp_terms.pdf";
+
+    fs.readFile(__dirname + filePath , function (err,data){
+        res.contentType("application/pdf");
+        res.send(data);
+    });
+});
+
 app.listen(process.env.PORT || 8080, function () {
   console.log('Listening on http://localhost:' + (process.env.PORT || 8080))
 })
