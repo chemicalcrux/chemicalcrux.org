@@ -4,8 +4,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  height: 99%;
+}
 body {
+  background: #000;
+  color: #fff;
   font-family: 'Source Code Pro', monospace;
+  overflow: hidden;
+  height: 99%;
 }
 .header {
   background: url("/images/banner dark.jpg");
@@ -14,14 +21,21 @@ body {
 }
 .header .page-title {
   font-weight: 200;
-  font-size: 80px;
+  font-size: 100px;
   text-align: center;
   padding: 100px;
   text-transform: uppercase;
   color: #aaa;
+  letter-spacing: 3vw;
+}
+.nav-fade {
+  background: linear-gradient(rgba(0,0,0,0), #000);
+  min-height: 50px;
 }
 .nav {
-  background: #002;
+  font-size: 1.25em;
+  font-weight: bold;
+  background: #000;
   text-align: center;
 }
 .nav li {
@@ -32,6 +46,10 @@ body {
   padding: 20px;
   color: #fff;
   text-decoration: none;
+}
+.nav a[current="true"] {
+  color: #aaf;
+  text-shadow: 0px 0px 5px #aaf;
 }
 .nav a:hover {
   background-color: #224;
@@ -62,9 +80,24 @@ body {
 .info-image {
   float: left;
   max-width: 250px;
+  margin: 0px 10px;
 }
 .thumb-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+#parent {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#child {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: -15px;
+  padding-right: 17px;
+  overflow: auto;
 }

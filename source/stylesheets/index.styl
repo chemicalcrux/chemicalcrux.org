@@ -1,68 +1,99 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,700')
 
 *
-  margin 0
-  padding 0
-  box-sizing border-box
+	margin 0
+	padding 0
+	box-sizing border-box
+
+html
+	height 99%
 
 body
-  font-family 'Source Code Pro', monospace
+	background black
+	color white
+	font-family 'Source Code Pro', monospace
+	overflow hidden
+	height 99%
 
 .header
-  background url('/images/banner dark.jpg')
-  background-position center
-  background-size cover
-  .page-title
-    font-weight 200
-    font-size 80px
-    text-align center
-    padding 100px
-    text-transform uppercase
-    color #AAAAAA
+	background url('/images/banner dark.jpg')
+	background-position center
+	background-size cover
+	.page-title
+		font-weight 200
+		font-size 100px
+		text-align center
+		padding 100px
+		text-transform uppercase
+		color #AAAAAA
+		letter-spacing 3vw
 
+.nav-fade
+	background linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1))
+	min-height 50px
 .nav
-  background #000022
-  text-align center
+	font-size 1.25em
+	font-weight bold
+	background rgba(0,0,0,1)
+	text-align center
 
-  li
-    display inline-block
+	li
+		display inline-block
 
-  a
-    display inline-block
-    padding 20px
-    color #fff
-    text-decoration none
+	a
+		display inline-block
+		padding 20px
+		color #fff
+		text-decoration none
 
-    &:hover
-      background-color #222244
-      text-shadow: 0px 0px 5px #eeeeff
-      text-decoration none
+		&[current=\"true\"]
+			color: #aaaaff
+			text-shadow: 0px 0px 5px #aaaaff
+		&:hover
+			background-color #222244
+			text-shadow: 0px 0px 5px #eeeeff
+			text-decoration none
 
 .main-content
-  margin 50px auto
-  max-width 800px
-  p
-    line-height 1.6
-    margin-bottom 1.7em
+	margin 50px auto
+	max-width 800px
+	p
+		line-height 1.6
+		margin-bottom 1.7em
 
 .footer
-  margin 50px auto
-  max-width 600px
-  border-top 1px solid #444
-  padding 20px 0
+	margin 50px auto
+	max-width 600px
+	border-top 1px solid #444
+	padding 20px 0
 
-  p
-    color #444
-    font-size 12px
+	p
+		color #444
+		font-size 12px
 
 .image-content
-  float left
+	float left
 
 .info-image
-  float left
-  max-width 250px
+	float left
+	max-width 250px
+	margin 0px 10px
 
 .thumb-container
-  display flex
-  flex-direction row
-  flex-wrap wrap
+	display flex
+	flex-direction row
+	flex-wrap wrap
+
+#parent
+	height 100%
+	width 100%
+	position relative
+
+#child
+	position absolute
+	top 0px
+	bottom 0px
+	left 0px
+	right -15px
+	padding-right 17px
+	overflow auto

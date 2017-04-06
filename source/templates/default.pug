@@ -1,27 +1,35 @@
 doctype html
 html
-  head
-    link(rel='stylesheet', href='/css/index.css')
-    title chemicalcrux
-  body
-    .header
-      h1.page-title C&nbsp;H&nbsp;E&nbsp;M&nbsp;I&nbsp;C&nbsp;A&nbsp;L C&nbsp;R&nbsp;U&nbsp;X
-    ul.nav
-      li: a(href='/') Home
-      li: a(href='/about') About
-      li: a(href='/interests') Interests
-      li: a(href='/commissions') Commissions
-      li: a(href='/work') Personal Work
-      li: a(href='/art') Art archive
+	head
+		link(rel='stylesheet', href='/css/index.css')
+		title chemicalcrux
+	body
+		div#parent
+			div#child
+				.header
+					h1.page-title CHEMICAL CRUX
+					div.nav-fade
+				ul.nav
+					li: a(href='/') Home
+					li: a(href='/about') About
+					li: a(href='/interests') Interests
+					li: a(href='/commissions') Commissions
+					li: a(href='/work') Personal Work
+					li: a(href='/art') Art archive
+				.main-content
+					block content
 
-    .main-content
-      block content
+				.footer
+					p.
+						this site doesn't use cookies; I ate them
+					p.
+						#[a(href='https://www.furaffinity.net/user/chemicalcrux') FurAffinity] ~
+						#[a(href='https://www.furrynetwork.com/chemicalcrux') Furry Network] ~
+						#[a(href='https://telegram.me/chemicalcrux') Telegram] ~
+						#[a(href='https://steamcommunity.com/id/chemicalcrux') Steam]
 
-    .footer
-      p.
-        this site doesn't use cookies; I ate them
-      p.
-        #[a(href='https://www.furaffinity.net/user/chemicalcrux') FurAffinity] ~
-        #[a(href='https://www.furrynetwork.com/chemicalcrux') Furry Network] ~
-        #[a(href='https://telegram.me/chemicalcrux') Telegram] ~
-        #[a(href='https://steamcommunity.com/id/chemicalcrux') Steam]
+					script.
+						document.querySelectorAll('[href="' + window.location.pathname + '"]')[0].setAttribute("current","true")
+						var parent = document.getElementById('parent');
+						var child = document.getElementById('child');
+						child.style.right = child.clientWidth - child.offsetWidth + "px";
