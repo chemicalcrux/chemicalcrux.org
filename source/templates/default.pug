@@ -4,7 +4,7 @@ html
 		link(rel='stylesheet', href='/css/index.css')
 		title chemicalcrux
 		meta(name='theme-color' content='#000000')
-	body
+	body(onload="onLoad()")
 		div#parent
 			div#child
 				.header
@@ -30,7 +30,8 @@ html
 						#[a(href='https://steamcommunity.com/id/chemicalcrux') Steam]
 
 					script.
-						document.querySelectorAll('[href="' + window.location.pathname + '"]')[0].setAttribute("current","true")
+						var onLoad = function() {document.querySelectorAll('[href="' + window.location.pathname + '"]')[0].setAttribute("current","true")
 						var parent = document.getElementById('parent');
 						var child = document.getElementById('child');
-						child.style.right = child.clientWidth - child.offsetWidth + "px";
+						var offset = child.clientWidth - child.offsetWidth;
+						child.style.right = offset + "px";}

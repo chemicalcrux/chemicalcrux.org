@@ -23,7 +23,7 @@ body {
   font-weight: 200;
   font-size: 100px;
   text-align: center;
-  padding: 100px;
+  padding: 100px 0px 100px 0px;
   text-transform: uppercase;
   color: #aaa;
   letter-spacing: 3vw;
@@ -98,6 +98,5 @@ body {
   bottom: 0px;
   left: 0px;
   right: -15px;
-  padding-right: 17px;
   overflow: auto;
 }
