@@ -30,7 +30,7 @@ html
 						#[a(href='https://steamcommunity.com/id/chemicalcrux') Steam]
 
 					script.
-						var onLoad = function() {document.querySelectorAll('[href="' + window.location.pathname + '"]')[0].setAttribute("current","true")
+						var onLoad = function() {document.querySelectorAll('[href="' + "/" + window.location.pathname.split("/")[1] + '"]')[0].setAttribute("current","true")
 						var parent = document.getElementById('parent');
 						var child = document.getElementById('child');
 						var offset = child.clientWidth - child.offsetWidth;
