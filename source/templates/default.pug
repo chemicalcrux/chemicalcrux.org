@@ -2,10 +2,9 @@ doctype html
 html
 	head
 		link(rel='stylesheet', href='/css/index.css')
-		title a chemical crux
+		title chemicalcrux
 		meta(name='theme-color' content='#000000')
-		meta(name='description' content='personal depravity website for chemicalcrux, aka Fen')
-		meta(name='keywords' content='furry,art,sound,vore,macro,micro')
+		block headers
 		meta(name='google-site-verification' content='wxaHbn-ssVzSIXHGOQM8MjNySVbk0iC4vo1biYIC2g8')
 	body(onload="onLoad()")
 		div#parent
@@ -25,12 +24,13 @@ html
 
 				.footer
 					p.
-						this site doesn't use cookies; I ate them
+						poke a crux
 					p.
 						#[a(href='https://www.furaffinity.net/user/chemicalcrux') FurAffinity] ~
-						#[a(href='https://www.furrynetwork.com/chemicalcrux') Furry Network] ~
 						#[a(href='https://telegram.me/chemicalcrux') Telegram] ~
-						#[a(href='https://steamcommunity.com/id/chemicalcrux') Steam]
+						#[a(href='https://steamcommunity.com/id/chemicalcrux') Steam] ~
+						#[a(href='https://discord.gg/RYNF5Ns') Discord Server] ~
+						#[a(href='https://twitter.com/chemicalcrux') Twitter]
 
 					script.
 						var onLoad = function() {document.querySelectorAll('[href="' + "/" + window.location.pathname.split("/")[1] + '"]')[0].setAttribute("current","true")
