@@ -93,6 +93,10 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
 }
+h2 {
+  color: #fff;
+  opacity: 0.5;
+}
 #parent {
   height: 100%;
   width: 100%;
