@@ -19,6 +19,10 @@ body
 	background url('/images/banner dark.jpg')
 	background-position center
 	background-size cover
+	-webkit-user-select none
+	-moz-user-select none
+	-ms-user-select none
+	user-select none
 	.page-title
 		font-weight 200
 		font-size 100px
@@ -48,14 +52,14 @@ body
 		text-decoration none
 
 		&:visited
-			color: #fff
+			color: #77e
 			text-shadow: 0px 0px 5px #eeeeff
 			text-decoration none
 		&[current=\"true\"]
-			color: #aaaaff
+			color: #77e
 			text-shadow: 0px 0px 5px #aaaaff
 		&:hover
-			color: #eeeeee
+			color: #eee
 			background-color #222244
 			text-shadow: 0px 0px 5px #eeeeff
 			text-decoration none
@@ -75,7 +79,7 @@ body
 
 	p
 		color #444
-		font-size 12px
+		font-size 16px
 
 .image-content
 	float left
@@ -109,8 +113,10 @@ h2
 
 a:link
 	color #7777AA
+
 a:visited
-	color #666699
+	color #7777AA
+
 a:hover
 	color #DDDDDD
 	text-shadow: 0px 0px 5px #eeeeff
