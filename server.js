@@ -1,5 +1,6 @@
 var express = require('express')
   , forceSSL = require('express-force-ssl')
+  , hsts = require('hsts')
   , fs = require('fs')
   , logger = require('morgan')
   , app = express()
@@ -22,6 +23,12 @@ app.set('forceSSLOptions', {
   httpsPort: 443,
   sslRequiredMessage: 'SSL Required.'
 });
+
+app.use(hsts({
+  maxAge: 31536000,        // Must be at least 1 year to be approved
+  includeSubDomains: true, // Must be enabled to be approved
+  preload: true
+}))
 
 app.get('/', function (req, res, next) {
   res.render('homepage')
