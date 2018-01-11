@@ -1,4 +1,5 @@
 var express = require('express')
+  , forceSSL = require('express-force-ssl')
   , fs = require('fs')
   , logger = require('morgan')
   , app = express()
@@ -9,10 +10,18 @@ var express = require('express')
 
 var credentials = {key: privateKey, cert: certificate};
 
+app.use(forceSSL);
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))
 app.set('view engine', 'pug')
 app.set('views', './source/templates')
+
+app.set('forceSSLOptions', {
+  enable301Redirects: true,
+  trustXFPHeader: false,
+  httpsPort: 443,
+  sslRequiredMessage: 'SSL Required.'
+});
 
 app.get('/', function (req, res, next) {
   res.render('homepage')
