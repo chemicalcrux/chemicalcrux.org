@@ -55,7 +55,7 @@ app.get('/commissions', function (req, res, next) {
 })
 
 
-app.get('/commissions/written_terms.pdf', function (req, res) {
+app.get('/commissions/(written_terms).pdf', function (req, res) {
     var filePath = "/files/written_terms.pdf";
 
     fs.readFile(__dirname + filePath , function (err,data){
@@ -87,8 +87,3 @@ var httpsServer = https.createServer(credentials,app);
 
 httpServer.listen(8080);
 httpsServer.listen(8443);
-
-
-//app.listen(process.env.PORT || 8080, function () {
-//  console.log('Listening on http://localhost:' + (process.env.PORT || 8080))
-//})
