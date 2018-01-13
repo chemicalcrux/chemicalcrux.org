@@ -18,24 +18,25 @@ html
 					h1.page-title CHEMICAL CRUX
 					div.nav-fade
 				ul.nav
-					li: a(href='/') Home
 					li: a(href='/about') About
 					li: a(href='/interests') Interests
+					li: a(href='/') Home
 					li: a(href='/commissions') Commissions
-					li: a(href='/work') Personal Work
-					li: a(href='/art') Art archive
+					li: a(href='/work') Work
 				.main-content
 					block content
 
 				.footer
 					p.
 						poke a crux
-					p.
-						#[a(href='https://www.furaffinity.net/user/chemicalcrux') FurAffinity] ~
-						#[a(href='https://telegram.me/chemicalcrux') Telegram] ~
-						#[a(href='https://steamcommunity.com/id/chemicalcrux') Steam] ~
-						#[a(href='https://discord.gg/RYNF5Ns') Discord Server] ~
-						#[a(href='https://twitter.com/chemicalcrux') Twitter]
+					ul
+						li: a(href='https://www.furaffinity.net/user/chemicalcrux') FurAffinity
+						li ~
+						li: a(href='https://telegram.me/chemicalcrux') Telegram
+						li ~
+						li: a(href='https://steamcommunity.com/id/chemicalcrux') Steam
+						li ~
+						li: a(href='https://twitter.com/chemicalcrux') Twitter
 
 					script.
 						var onLoad = function() {document.querySelectorAll('[href="' + "/" + window.location.pathname.split("/")[1] + '"]')[0].setAttribute("current","true")
