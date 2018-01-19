@@ -12,41 +12,35 @@ html
 		block headers
 		meta(name='google-site-verification' content='wxaHbn-ssVzSIXHGOQM8MjNySVbk0iC4vo1biYIC2g8')
 	body(onload="onLoad()")
-		div#parent
-			div#child
-				.header
-					h1.page-title CHEMICAL CRUX
-					div.nav-fade
-				ul.nav
-					li: a(href='/about') About
-					li: a(href='/interests') Interests
-					li: a(href='/') Home
-					li: a(href='/commissions') Commissions
-					li: a(href='/work') Work
-				.main-content
-					block content
+		.header
+			h1.page-title CHEMICAL CRUX
+			div.nav-fade
+		ul.nav
+			li: a(href='/about') About
+			li: a(href='/interests') Interests
+			li: a(href='/') Home
+			li: a(href='/commissions') Commissions
+			li: a(href='/work') Work
+		.main-content
+			block content
 
-				.footer
-					p.
-						header artwork by #[a(href='https://www.furaffinity.net/user/ovens') ovens]
-					p.
-						favicon by #[a(href='https://www.furaffinity.net/user/undeadclown') undeadclown]
-					p.
-						powered by Express, NodeJS, and some horrific CSS
-					p.
-						poke a crux
-					ul
-						li: a(href='https://www.furaffinity.net/user/chemicalcrux') FurAffinity
-						li ~
-						li: a(href='https://telegram.me/chemicalcrux') Telegram
-						li ~
-						li: a(href='https://steamcommunity.com/id/chemicalcrux') Steam
-						li ~
-						li: a(href='https://twitter.com/chemicalcrux') Twitter
+		.footer
+			p.
+				header artwork by #[a(href='https://www.furaffinity.net/user/ovens') ovens]
+			p.
+				favicon by #[a(href='https://www.furaffinity.net/user/undeadclown') undeadclown]
+			p.
+				powered by Express, NodeJS, and some horrific CSS
+			p.
+				poke a crux
+			ul
+				li: a(href='https://www.furaffinity.net/user/chemicalcrux') FurAffinity
+				li ~
+				li: a(href='https://telegram.me/chemicalcrux') Telegram
+				li ~
+				li: a(href='https://steamcommunity.com/id/chemicalcrux') Steam
+				li ~
+				li: a(href='https://twitter.com/chemicalcrux') Twitter
 
-					script.
-						var onLoad = function() {document.querySelectorAll('[href="' + "/" + window.location.pathname.split("/")[1] + '"]')[0].setAttribute("current","true")
-						var parent = document.getElementById('parent');
-						var child = document.getElementById('child');
-						var offset = child.clientWidth - child.offsetWidth;
-						child.style.right = offset + "px";}
+			script.
+				var onLoad = function() {document.querySelectorAll('[href="' + "/" + window.location.pathname.split("/")[1] + '"]')[0].setAttribute("current","true");}
