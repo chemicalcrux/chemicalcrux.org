@@ -8,9 +8,11 @@ var express = require('express')
   , https = require('https')
   , privateKey = fs.readFileSync('cert/privkey.pem', 'utf8').toString()
   , certificate = fs.readFileSync('cert/fullchain.pem', 'utf8').toString()
+  , compression = require('compression')
 
 var credentials = {key: privateKey, cert: certificate};
 
+app.use(compression());
 app.use(forceSSL);
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static'))
