@@ -12,10 +12,26 @@ var express = require('express')
 
 var credentials = {key: privateKey, cert: certificate};
 
+function setHeaders(res) {
+  setHeaders(res, "", "");
+}
+
+function setHeaders(res, path, stat) {
+  res.set('X-Frame-Options','SAMEORIGIN');
+  res.set('X-XSS-Protection','1; mode=block');
+  res.set('X-Content-Type-Options','nosniff');
+  res.set('Referrer-Policy','strict-origin');
+  res.set('Content-Security-Policy','script-src \'self\'');
+}
+
+var options = {
+  setHeaders: setHeaders
+}
+
 app.use(compression());
 app.use(forceSSL);
 app.use(logger('dev'))
-app.use(express.static(__dirname + '/static'))
+app.use(express.static(__dirname + '/static', options))
 app.set('view engine', 'pug')
 app.set('views', './source/templates')
 
@@ -33,31 +49,38 @@ app.use(hsts({
 }))
 
 app.get('/', function (req, res, next) {
+  setHeaders(res);
   res.render('homepage')
 })
 
 app.get('/about', function (req, res, next) {
+  setHeaders(res);
   res.render('about')
 })
 
 app.get('/interests', function(req, res, next) {
+  setHeaders(res);
   res.render('interests')
 })
 
 app.get('/work', function (req, res, next) {
+  setHeaders(res);
   res.render('work')
 })
 
 app.get('/art', function (req, res, next) {
+  setHeaders(res);
   res.render('art')
 })
 
 app.get('/commissions', function (req, res, next) {
+  setHeaders(res);
   res.render('commissions')
 })
 
 
 app.get('/commissions/written_terms.pdf', function (req, res) {
+  setHeaders(res);
     var filePath = "/files/written_terms.pdf";
 
     fs.readFile(__dirname + filePath , function (err,data){
@@ -67,6 +90,7 @@ app.get('/commissions/written_terms.pdf', function (req, res) {
 });
 
 app.get('/commissions/audio_terms.pdf', function (req, res) {
+  setHeaders(res);
     var filePath = "/files/audio_terms.pdf";
 
     fs.readFile(__dirname + filePath , function (err,data){
@@ -76,6 +100,7 @@ app.get('/commissions/audio_terms.pdf', function (req, res) {
 });
 
 app.get('/commissions/rp_terms.pdf', function (req, res) {
+  setHeaders(res);
     var filePath = "/files/rp_terms.pdf";
 
     fs.readFile(__dirname + filePath , function (err,data){
