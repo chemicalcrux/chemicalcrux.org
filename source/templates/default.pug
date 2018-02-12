@@ -14,7 +14,7 @@ html
 		meta(name='og-image' content='android-chrome-256x256.png')
 		block headers
 		meta(name='google-site-verification' content='wxaHbn-ssVzSIXHGOQM8MjNySVbk0iC4vo1biYIC2g8')
-	body(onload="onLoad()")
+	body
 		.header
 			h1.page-title CHEMICAL CRUX
 			div.nav-fade
@@ -45,5 +45,4 @@ html
 				li ~
 				li: a(href='https://twitter.com/chemicalcrux') Twitter
 
-			script.
-				var onLoad = function() {document.querySelectorAll('[href="' + "/" + window.location.pathname.split("/")[1] + '"]')[0].setAttribute("current","true");}
+			script(src="highlight.js")
