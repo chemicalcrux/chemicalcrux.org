@@ -32,6 +32,7 @@ app.use(compression());
 app.use(forceSSL);
 app.use(logger('dev'))
 app.use(express.static(__dirname + '/static', options))
+app.use(express.static(__dirname + '/stroll', options))
 app.set('view engine', 'pug')
 app.set('views', './source/templates')
 
@@ -77,7 +78,6 @@ app.get('/commissions', function (req, res, next) {
   setHeaders(res);
   res.render('commissions')
 })
-
 
 app.get('/commissions/written_terms.pdf', function (req, res) {
   setHeaders(res);
