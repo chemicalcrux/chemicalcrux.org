@@ -79,6 +79,11 @@ app.get('/commissions', function (req, res, next) {
   res.render('commissions')
 })
 
+app.get('/stroll', function (req, res, next) {
+  setHeaders(res);
+  res.render('stroll')
+})
+
 app.get('/commissions/written_terms.pdf', function (req, res) {
   setHeaders(res);
     var filePath = "/files/written_terms.pdf";
