@@ -9,10 +9,6 @@ var express = require('express')
   , privateKey = fs.readFileSync('cert/privkey.pem', 'utf8').toString()
   , certificate = fs.readFileSync('cert/fullchain.pem', 'utf8').toString()
   , compression = require('compression')
-  , mongo = require('mongodb')
-
-  var MongoClient = mongo.MongoClient;
-  var url = 'mongodb://localhost:27017/';
 
 var credentials = {key: privateKey, cert: certificate};
 
@@ -87,25 +83,6 @@ app.get('/stroll', function (req, res, next) {
   setHeaders(res);
   res.render('stroll')
 })
-
-app.get('/stroll/character', function(req, res, next) {
-  MongoClient.connect(url, function(err, db) {
-    if (err) throw err;
-    console.log("Connected to database!");
-    console.log(req.query.name);
-    var dbo = db.db("stroll");
-
-    dbo.collection("chars").find({name: req.query.name}, { _id: 0 }).toArray(function(err, result) {
-      if (err) throw err;
-      setHeaders(res);
-      let char = result[0];
-      delete char._id;
-      res.send(char);
-      db.close();
-    });
-
-  });
-});
 
 app.get('/commissions/written_terms.pdf', function (req, res) {
   setHeaders(res);
