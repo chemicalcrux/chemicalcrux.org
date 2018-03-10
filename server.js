@@ -31,7 +31,7 @@ var options = {
 app.use(compression());
 app.use(forceSSL);
 app.use(logger('dev'));
-//app.use('/feast', express.static(__dirname + '/feast'));
+app.use('/feast', express.static(__dirname + '/feast'));
 app.use(express.static(__dirname + '/static', options));
 app.use(express.static(__dirname + '/stroll', options));
 app.set('view engine', 'pug');
@@ -80,10 +80,10 @@ app.get('/commissions', function (req, res, next) {
   res.render('commissions')
 })
 
-/*app.get('/feast', function (req, res, next) {
+app.get('/feast', function (req, res, next) {
   setHeaders(res);
   res.render('feast')
-})*/
+})
 
 app.get('/stroll', function (req, res, next) {
   setHeaders(res);
