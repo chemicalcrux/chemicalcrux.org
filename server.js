@@ -76,6 +76,11 @@ app.get('/art', function (req, res, next) {
   res.render('art')
 })
 
+app.get('/games', function (req, res, next) {
+  setHeaders(res);
+  res.render('games')
+})
+
 app.get('/commissions', function (req, res, next) {
   setHeaders(res);
   res.render('commissions')
