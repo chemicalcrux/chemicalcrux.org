@@ -37,7 +37,7 @@ app.use('/feast', express.static(__dirname + '/feast', options));
 app.use('/nightly/feast', express.static(__dirname + '/nightly/feast', options));
 app.use('/stroll', express.static(__dirname + '/stroll', options));
 app.use('/nightly/stroll', express.static(__dirname + '/nightly/stroll', options));
-app.use('/preview/lalim', express.static(__dirname + '/preview/lalim', options));
+app.use('/preview', express.static(__dirname + '/preview', options));
 
 app.use(express.static(__dirname + '/static', options));
 app.use(express.static(__dirname + '/stroll', options));
