@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /feast/feast.html
+Disallow: /stroll/stroll.html
+Disallow: /nightly/
+Disallow: /stroll.html
