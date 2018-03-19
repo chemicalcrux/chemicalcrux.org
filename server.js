@@ -25,7 +25,8 @@ function setHeaders(res, path, stat) {
 }
 
 var options = {
-  setHeaders: setHeaders
+  setHeaders: setHeaders,
+  dotfiles: 'ignore'
 }
 
 app.use(compression());
