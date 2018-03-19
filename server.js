@@ -40,8 +40,8 @@ app.use('/stroll', express.static(__dirname + '/stroll', options));
 app.use('/nightly/stroll', express.static(__dirname + '/nightly/stroll', options));
 app.use('/preview', express.static(__dirname + '/preview', options));
 
-app.use(express.static(__dirname + '/static', options));
-app.use(express.static(__dirname + '/stroll', options));
+app.use(express.static(__dirname + '/static', {setHeaders: setHeaders}));
+
 app.set('view engine', 'pug');
 app.set('views', './source/templates');
 
@@ -101,6 +101,11 @@ app.get('/feast', function (req, res, next) {
 app.get('/stroll', function (req, res, next) {
   setHeaders(res);
   res.render('stroll')
+})
+
+app.get('/stroll.html', function (req, res, next) {
+  setHeaders(res);
+  res.render('stroll-deprecate')
 })
 
 app.get('/commissions/written_terms.pdf', function (req, res) {
