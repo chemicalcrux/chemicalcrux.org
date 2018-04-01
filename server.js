@@ -39,6 +39,7 @@ app.use('/nightly/feast', express.static(__dirname + '/nightly/feast', options))
 app.use('/stroll', express.static(__dirname + '/stroll', options));
 app.use('/nightly/stroll', express.static(__dirname + '/nightly/stroll', options));
 app.use('/preview', express.static(__dirname + '/preview', options));
+app.use('/april', express.static(__dirname + '/april', options));
 
 app.use(express.static(__dirname + '/static', {setHeaders: setHeaders}));
 
