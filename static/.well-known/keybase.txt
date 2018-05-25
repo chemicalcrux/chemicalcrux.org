@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/chemicalcrux
+—------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://chemicalcrux.org
+  * I am chemicalcrux (https://keybase.io/chemicalcrux) on keybase.
+  * I have a public key ASBNrsLnJ1iMXPox1Q4mH83y6VQiRYD6moYZngNOYbh0OQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204daec2e727588c5cfa31d50e261fcdf2e954224580fa9a86199e034e61b874390a",
+      "host": "keybase.io",
+      "kid": "01204daec2e727588c5cfa31d50e261fcdf2e954224580fa9a86199e034e61b874390a",
+      "uid": "1d45b2e8716b02db74cfe67618ae8d19",
+      "username": "chemicalcrux"
+    },
+    "merkle_root": {
+      "ctime": 1527216553,
+      "hash": "fb6bd94e6c908044f134a310bb1cc18e0506bb66a07bf4c33dfc6fcb2b167ec9bc68e94b4856c0094a7ed645c278935996a8ecdafeed8647394caa4e562ea3c5",
+      "hash_meta": "bdb8e42ceaaabab51ec62af433371a8556b245bce961230d41df087109c592d4",
+      "seqno": 2905615
+    },
+    "service": {
+      "entropy": "NX+VT7O4xqyeBPE8M/88z8eX",
+      "hostname": "chemicalcrux.org",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.48"
+  },
+  "ctime": 1527216563,
+  "expire_in": 504576000,
+  "prev": "eab73fee9ed6fecc95a47e95983758628f178fbf0793ac28f41a8600f0732ad5",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgTa7C5ydYjFz6MdUOJh/N8ulUIkWA+pqGGZ4DTmG4dDkKp3BheWxvYWTESpcCBcQg6rc/7p7W/syVpH6VmDdYYo8Xj78Hk6wo9BqGAPBzKtXEIJmjgrBANY5+aWwLXAJ1C5LA7wrcelb5YdKgRIE7DJT9AgHCo3NpZ8RAVnPavLo7f9lgkJFXxiruOfvtyqsjmCC97HwXMqrNzYPmf7ceF8kDsjZhFrm3Sn77eJaU5VEbsDVRX29oCZ9kCKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGJAZQellwLoWyxPL3tyjvZphFkBptBPYyiNxJKOze74o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/chemicalcrux
+
+==================================================================
