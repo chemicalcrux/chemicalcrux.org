@@ -40,6 +40,7 @@ app.use('/stroll', express.static(__dirname + '/stroll', options));
 app.use('/nightly/stroll', express.static(__dirname + '/nightly/stroll', options));
 app.use('/gorge', express.static(__dirname + '/gorge', options));
 app.use('/nightly/gorge', express.static(__dirname + '/nightly/gorge', options));
+app.use('/nightly/satiate', express.static(__dirname + '/nightly/satiate', options));
 app.use('/preview', express.static(__dirname + '/preview', options));
 app.use('/april', express.static(__dirname + '/april', options));
 
