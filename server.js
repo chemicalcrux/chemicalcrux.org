@@ -21,7 +21,7 @@ function setHeaders(res, path, stat) {
   res.set('X-XSS-Protection','1; mode=block');
   res.set('X-Content-Type-Options','nosniff');
   res.set('Referrer-Policy','strict-origin');
-  res.set('Content-Security-Policy',"default-src 'none'; font-src https://fonts.gstatic.com; img-src 'self'; media-src 'self'; manifest-src 'self'; object-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com")
+  res.set('Content-Security-Policy',"default-src 'none'; font-src https://fonts.gstatic.com; connect-src 'self'; img-src 'self'; media-src 'self'; manifest-src 'self'; object-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com")
 }
 
 var options = {
