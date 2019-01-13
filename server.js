@@ -108,9 +108,9 @@ app.get('/stroll', function (req, res, next) {
   res.render('stroll')
 })
 
-app.get('/stroll.html', function (req, res, next) {
+app.get('/satiate', function (req, res, next) {
   setHeaders(res);
-  res.render('stroll-deprecate')
+  res.render('satiate')
 })
 
 app.get('/commissions/written_terms.pdf', function (req, res) {
