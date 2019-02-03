@@ -9,6 +9,7 @@ var express = require('express')
   , privateKey = fs.readFileSync('cert/privkey.pem', 'utf8').toString()
   , certificate = fs.readFileSync('cert/fullchain.pem', 'utf8').toString()
   , compression = require('compression')
+  , forceDomain = require('forcedomain')
 
 var credentials = {key: privateKey, cert: certificate};
 
@@ -33,6 +34,10 @@ app.use(compression());
 app.use(forceSSL);
 app.use(logger('dev'));
 
+app.use(forceDomain({
+  hostname: 'chemicalcrux.org',
+  type: 'temporary'
+}));
 
 app.use('/feast', express.static(__dirname + '/feast', options));
 app.use('/nightly/feast', express.static(__dirname + '/nightly/feast', options));
