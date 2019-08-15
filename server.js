@@ -1,17 +1,10 @@
 var express = require('express')
-  , forceSSL = require('express-force-ssl')
   , hsts = require('hsts')
   , fs = require('fs')
   , logger = require('morgan')
   , app = express()
   , http = require('http')
-  , https = require('https')
-  , privateKey = fs.readFileSync('cert/privkey.pem', 'utf8').toString()
-  , certificate = fs.readFileSync('cert/fullchain.pem', 'utf8').toString()
   , compression = require('compression')
-  , forceDomain = require('forcedomain')
-
-var credentials = {key: privateKey, cert: certificate};
 
 function setHeaders(res) {
   setHeaders(res, "", "");
@@ -31,13 +24,7 @@ var options = {
 }
 
 app.use(compression());
-app.use(forceSSL);
 app.use(logger('dev'));
-
-app.use(forceDomain({
-  hostname: 'chemicalcrux.org',
-  type: 'temporary'
-}));
 
 app.use('/feast', express.static(__dirname + '/feast', options));
 app.use('/nightly/feast', express.static(__dirname + '/nightly/feast', options));
@@ -150,7 +137,5 @@ app.get('/commissions/rp_terms.pdf', function (req, res) {
 });
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials,app);
 
-httpServer.listen(8080);
-httpsServer.listen(8443);
+httpServer.listen(8443);
