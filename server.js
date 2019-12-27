@@ -1,16 +1,10 @@
 var express = require('express')
-  , forceSSL = require('express-force-ssl')
   , hsts = require('hsts')
   , fs = require('fs')
   , logger = require('morgan')
   , app = express()
   , http = require('http')
-  , https = require('https')
-  , privateKey = fs.readFileSync('cert/privkey.pem', 'utf8').toString()
-  , certificate = fs.readFileSync('cert/fullchain.pem', 'utf8').toString()
   , compression = require('compression')
-
-var credentials = {key: privateKey, cert: certificate};
 
 function setHeaders(res) {
   setHeaders(res, "", "");
@@ -30,18 +24,17 @@ var options = {
 }
 
 app.use(compression());
-app.use(forceSSL);
 app.use(logger('dev'));
-
 
 app.use('/feast', express.static(__dirname + '/feast', options));
 app.use('/nightly/feast', express.static(__dirname + '/nightly/feast', options));
 app.use('/stroll', express.static(__dirname + '/stroll', options));
+app.use('/old/stroll', express.static(__dirname + '/old/stroll', options));
 app.use('/nightly/stroll', express.static(__dirname + '/nightly/stroll', options));
 app.use('/gorge', express.static(__dirname + '/gorge', options));
 app.use('/nightly/gorge', express.static(__dirname + '/nightly/gorge', options));
+app.use('/satiate', express.static(__dirname + '/satiate', options));
 app.use('/nightly/satiate', express.static(__dirname + '/nightly/satiate', options));
-app.use('/satiate/media', express.static(__dirname + '/satiate/media', options));
 app.use('/preview', express.static(__dirname + '/preview', options));
 app.use('/april', express.static(__dirname + '/april', options));
 
@@ -108,9 +101,9 @@ app.get('/stroll', function (req, res, next) {
   res.render('stroll')
 })
 
-app.get('/stroll.html', function (req, res, next) {
+app.get('/satiate', function (req, res, next) {
   setHeaders(res);
-  res.render('stroll-deprecate')
+  res.render('satiate')
 })
 
 app.get('/commissions/written_terms.pdf', function (req, res) {
@@ -144,7 +137,5 @@ app.get('/commissions/rp_terms.pdf', function (req, res) {
 });
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials,app);
 
-httpServer.listen(8080);
-httpsServer.listen(8443);
+httpServer.listen(8443);
